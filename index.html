@@ -1,0 +1,36 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch The Data From Website</title>
+</head>
+<body>
+    <div>
+        <h1>Fetch The Data From Website</h1>
+        <form method="POST">
+            <div>
+                <label for="page_start">Page Start:</label>
+                <input type="number" name="page_start" id="page_start" required><br/><br>
+            </div>
+            <div>
+                <label for="page_end">Page End:</label>
+                <input type="number" name="page_end" id="page_end" required><br/><br>
+            </div>
+            <div>
+                <label for="count">Count:</label>
+                <input type="number" name="count" id="count" required><br/><br>
+            </div>
+            <button type="submit">Fetch Data</button><br/><br>
+        </form>
+
+        {% if table %}
+        <div>
+            <h2>Data Table</h2>
+            {{ table | safe }}
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
